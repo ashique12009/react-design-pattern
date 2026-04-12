@@ -38,12 +38,19 @@ const UserProfileContainer = ({ userId }) => {
     }
   };
 
+  const handleRetry = () => {
+    setError(null);
+    fetchUserData();
+    fetchUserPosts();
+  }
+
   return (
     <UserProfilePresenter
       user={user}
       posts={posts}
       loading={loading}
       error={error}
+      onRetry={handleRetry}
     />
   );
 };
