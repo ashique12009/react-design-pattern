@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import UserProfilePresenter from "./UserProfilePresenter";
 
 const UserProfileContainer = ({ userId }) => {
   const [user, setUser] = useState(null);
@@ -37,7 +38,14 @@ const UserProfileContainer = ({ userId }) => {
     }
   };
 
-  return <div>UserProfileContainer</div>;
+  return (
+    <UserProfilePresenter
+      user={user}
+      posts={posts}
+      loading={loading}
+      error={error}
+    />
+  );
 };
 
 export default UserProfileContainer;
