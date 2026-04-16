@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 import UserProfile from './UserProfile'
+import UserProfileContainer from './with-pattern/components/UserProfileContainer';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <UserProfile userId={1} />
+      <UserProfileContainer userId={1} />
     </>
   )
 }
