@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const ControlledFeedbackForm = () => {
   const [form, setForm] = useState({
@@ -7,6 +7,10 @@ const ControlledFeedbackForm = () => {
     message: "",
   });
 
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const messageRef = useRef();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -14,6 +18,19 @@ const ControlledFeedbackForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!form.name) {
+      nameRef.current.focus();
+      return;
+    }
+    if (!form.email.includes("@")) {
+      emailRef.current.focus();
+      return;
+    }
+    if (!form.message) {
+      messageRef.current.focus();
+      return;
+    }
     
     console.log("Form submitted:", form);
   };
@@ -26,6 +43,7 @@ const ControlledFeedbackForm = () => {
         type="text"
         value={form.name}
         onChange={handleChange}
+        ref={nameRef}
         placeholder="Name"
       />
       <input
@@ -34,6 +52,7 @@ const ControlledFeedbackForm = () => {
         name="email"
         value={form.email}
         onChange={handleChange}
+        ref={emailRef}
         placeholder="Email"
       />
       <textarea
@@ -41,6 +60,7 @@ const ControlledFeedbackForm = () => {
         name="message"
         value={form.message}
         onChange={handleChange}
+        ref={messageRef}
         placeholder="Your message"
       />
       <button className="bg-purple-500 text-white p-1 rounded" type="submit">
