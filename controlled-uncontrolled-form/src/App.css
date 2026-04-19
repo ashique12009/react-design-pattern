@@ -40,3 +40,48 @@
 .read-the-docs {
   color: #888;
 }
+
+#contactFormWrapper {
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+#contactFormWrapper #contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#contactFormWrapper .row {
+  display: flex;
+  gap: 10px;
+}
+
+#contactFormWrapper input,
+#contactFormWrapper textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#contactFormWrapper textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#contactFormWrapper button {
+  padding: 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#contactFormWrapper button:hover {
+  background-color: #555;
+}
