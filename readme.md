@@ -16,3 +16,11 @@ Need to understand where the data is, in state or in DOM.
 Do not mess with like some fields in controlled and some fields are in uncontrolled way.
 Controlled mindset: User type -> onChange -> state update -> UI re-render
 Uncontrolled mindset: User type -> in DOM -> read if needed
+
+---
+
+## 3. Compound Design Patter
+
+Parent manages states and children communicate automatically each other.
+When should we use this pattern, when children work as a team.
+Compound pattern = one parent + all smart children
